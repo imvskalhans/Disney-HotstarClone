@@ -109,3 +109,15 @@ cardcontainers.forEach((item, i) => {
     item.scrollLeft -= containerWidth + 200;
   });
 });
+
+//footer
+let prevScrollPos = window.pageYOffset;
+window.onscroll = function () {
+  let currentScrollPos = window.pageYOffset;
+  if (prevScrollPos > currentScrollPos) {
+    document.querySelector("footer").style.bottom = "0";
+  } else {
+    document.querySelector("footer").style.bottom = "-60px";
+  }
+  prevScrollPos = currentScrollPos;
+};
